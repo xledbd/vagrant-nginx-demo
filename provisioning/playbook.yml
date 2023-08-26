@@ -6,3 +6,12 @@
       ansible.builtin.apt:
         name: "*"
         state: latest
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+    - name: Enable and start nginx
+      ansible.builtin.service:
+        name: nginx
+        enabled: yes
+        state: started
