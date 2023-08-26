@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Upgrade all packages
+      ansible.builtin.apt:
+        name: "*"
+        state: latest
